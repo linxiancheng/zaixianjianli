@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>林献程个人网站-首页</title>
+	<link rel="stylesheet" type="text/css" href="./css/css.css">
+	<link rel="stylesheet" type="text/css" href="./css/demo.css">
+	<script type="text/javascript" src="./js/jq.js"></script>
+	<script type="text/javascript" src="./js/js.js"></script>
+</head>
+<body>
+	<!-- 头部信息 -->
+	<header>
+		<div class="header-top">
+			  <svg class='svg'>
+                <text text-anchor="middle" x="50%" y="60%" class="text text-1">
+                  林献程个人网站
+                 </text>
+                 <text text-anchor="middle" x="50%" y="60%" class="text text-2">
+                  林献程个人网站
+                 </text>
+                 <text text-anchor="middle" x="50%" y="60%" class="text text-3">
+                  林献程个人网站
+                 </text>
+                 <text text-anchor="middle" x="50%" y="60%" class="text text-4">
+                  林献程个人网站
+                 </text>	    
+             </svg>
+			<div class="gl">
+				<div class="t1">你未必出类拔萃</div>
+				<div class="t2">但一定要与众不同</div>
+				<div class="t3">——致自己</div>
+			</div>
+		</div>
+		<nav class="nav">
+			<ul>
+				<li>
+					<a href="./index.html" name="index">首页</a>
+				</li>
+				<li>
+					<a href="./list.html" name="pro">个人作品</a>
+				</li>
+				<li>
+					<a href="./neir.html" name="suibi">随笔</a>
+				</li>
+				<li>
+					<a href="me.html" name="me">关于我</a>
+				</li>
+				<li class="nav-li" title="点击搜索" id="nav-li">◎</li>
+			</ul>
+		</nav>
+		<div class="nav-bot">
+			<div class="a-ico">
+				<span class="a-icos"></span>
+			</div>
+			<marquee direction="left">欢迎各位到来此网站，谢谢大家预览。</marquee>
+			<form id="sousuo">
+				<input type="text" name="" placeholder="请输入搜索内容...">
+			</form>
+		</div>
+	</header>
+	<!-- 内容区域 -->
+	<div class="mian">
+		<div class="left">
+			<div class="neir">
+				<div class="neirs">
+					<div class="neir-top">
+						<h3>git学习笔记</h3>
+						<span>发表于2017-08-31   |   归类：笔记</span>
+					</div>
+					<div class="neir-box">
+						<p>自己的笔记<br>
+
+开始<br>
+mkdir hello //创建hello文件夹<br>
+echo “# git” >> demo.txt //创建内容为：# git 的demo.txt文件<br>
+git init //创建新仓库<br>
+git add demo.txt //添加demo.txt ，提交到暂存盘<br>
+git commit -m “first commit” //提交到仓库（当前分支上） -m后面是说明<br>
+git status //查看跟踪的内容有哪些是改动的<br>
+git diff //查看修改文件修改了哪些内容<br>
+git log //查看提交的历史记录 另：退出是英文状态按Q键<br>
+git log –pretty=oneline //查看提交的历史记录，不过显示的比较简洁<br>
+git log –pretty=oneline –abbrev-commit //也是查看<br>
+git reset HEAD^ //回退到上一个版本 上两个版本 HEAD^^ 以此类推 or HEAD~100 100为次数<br>
+git reset 版本号 //版本号不一定要输入完，但是也不能输的少<br>
+git reflog //查看输入的命令，可根据此来让版本退回到任何版本<br>
+cat hello.txt //查看hello的内容<br>
+git checkout – hello.txt //丢弃工作区的修改 ，当删错文件可以用这个找回，前提是版本库里有<br>
+①没保存在暂存盘的情况就回到上次版本保存的一样<br>
+②有保存暂存盘的就返回暂存盘保存的内容<br>
+git reset HEAD hello.txt //把提交到暂存盘的撤销回来<br>
+git rm hello.txt //从版本库删除hello文件,运行完之后要commit -m ‘’ 提交你删除的信息，不然会有问题<br>
+远程仓库，github搭配使用<br>
+ssh-keygen -t rsa -C “296011508@qq.com” //创建SSH Key,运行完后会有.ssh目录，<br>
+里面有id_rsa（私钥）id_rsa.pub（公钥）2文件<br>
+打开github添加ssh,用id_rsa.pub内容<br>
+git remote add origin git@github.com:linxianxiancheng/git.git //关联github远程库<br>
+git remote add origin https://github.com/linxianxiancheng/git.git //关联另一种方法<br>
+git push -u origin master //把所有内容推送到远程库上,之后可以少 -u 来提交<br>
+git clone git@github.com:linxianxiancheng/git.git //远程克隆项目<br>
+分支<br>
+git checkout -b dev //创建dev分支,其中-b 表示创建并切换，相当于下面2条命令结合<br>
+git branch dev //创建dev分支<br>
+git checkout dev //切换到dev分支<br>
+git merge dev //把dev分支的内容合并一起，不能在历史中看到合并的记录<br>
+git merge –no-ff -m ‘内容’ dev //使用普通模式合并，好处是之后能在历史中看到合并的记录<br>
+git branch -d dev //删除dev分支<br>
+git branch -D dev //强制删除dev分支（没合并过的分支，使用此方法删除）<br>
+储存工作区<br>
+git stash //把当前工作现场“储藏”起来<br>
+git stash list //查看储存的工作区<br>
+git stash apply //恢复工作区，但是stash内容不删除<br>
+git stash drop //删除stash内容<br>
+git stash pop //恢复工作区，并删除stash内容<br>
+git stash apply stash@{0} //多个工作区，恢复特定的工作区是这样使用<br>
+查看<br>
+git remote //查看远程库的信息<br>
+git remote -v //显示更详细的远程库信息</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="right">
+			<div class="right-top">
+				<div class="right-top-h"> 
+					<span>关于我</span>
+				</div>
+				<div class="right-top-c">
+					<div class="img">
+						<img src="./img/avatar.gif">
+					</div>
+					<div class="right-top-p">
+						<p>姓名：林献程</p>
+						<p>职业：web前端工程师</p>
+						<p>手机号：18589609306</p>
+						<p>邮箱：296011508@qq.com</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="right-bot">
+				<div class="kuang">
+					<div class="time">
+						<div class="yuan">
+							<span class="zx"></span>
+							<span class="h"></span>
+							<span class="m"></span>
+							<span class="s"></span>
+							<span class="s1">1</span>
+							<span class="s2">2</span>
+							<span class="s3">3</span>
+							<span class="s4">4</span>
+							<span class="s5">5</span>
+							<span class="s6">6</span>
+							<span class="s7">7</span>
+							<span class="s8">8</span>
+							<span class="s9">9</span>
+							<span class="s10">10</span>
+							<span class="s11">11</span>
+							<span class="s12">12</span>
+						</div>
+					</div>
+
+					<div class="times">
+						<div class="nian">
+							<span></span>
+						</div>
+						<div class="yue"></div>
+						<div class="xq"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<!-- 版权区域 -->
+	<footer class="footer">
+		<div class="footer-box">林献程个人网站-296011508@qq.com</div>
+	</footer>
+	<script type="text/javascript">
+		function task(){
+			var now=new Date();
+			var s=now.getSeconds();
+			
+			var m=now.getMinutes();
+			
+			var h=now.getHours();
+			// console.log(now);
+			// console.log(h+':'+m+':'+s);
+		}
+		task();
+		/*事件间隔事件*/
+		setInterval(task,1000);
+	</script>
+</body>
+</html>
