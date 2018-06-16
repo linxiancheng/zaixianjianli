@@ -854,9 +854,99 @@ body{
 
 
 
+@media screen and (max-width: 1024px) { 
+	.header-top{
+		height: 80px;
+	}
+	.svg{
+		width: 100%;
+	}
+	.text{
+		font-size: 30px;
+	}
+	.gl{
+		display: none;
+	}
+	.nav ul li a{
+		font-size: 12px;
+		padding: 0 10px;
+	}
+	.nav-bot marquee{
+		font-size: 12px;
+	}
+	.nav-bot form input{
+		margin-left: -75px;
+	}
+	.right{
+		display: none;
+	}
+	.left{
+		width: 100%;
+	}
+	.left-top h3{
+		font-size: 16px;
+	}
+	.pro-box{
+		width: 100%;
+		margin: 10px 0;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #ccc;
+	}
+	.pro-img{
+		width: 100%;
+		height: 150px;
+	}
+	.pro-boxs{
+		width: 100%;
+	}
+	.pro-l{
+		width: 100%;
+	}
+	.neir{
+		width: 100%;
+	}
+	.neir-box{
+		font-size: 12px;
+	}
+	.jieshao dl{
+		width: 100%;
+		float: none;
+	}
+	.jieshao dl:nth-child(2){
+		margin-left: 0;
+	}
+	.jl-bg img{
+		display: none;
+	}
+	.zwpj p{
+		font-size: 12px;
+	}
+	.download{
+		width: 60%;
+	}
+} 
 
+@media screen and (min-width: 768px) { 
+	.jl-bg img{
+		display: block;
+		right: -3%;
+	}
+	.download{
+		width: 40%;
+	}
+} 
 
-
+@media screen and (min-width: 1040px) { 
+	.right{
+		display: block;
+	}
+	.left{
+		width: 1000px;
+	}
+	.jl-bg img{
+		right: 3%;
+	}
+} 
 
 
 
